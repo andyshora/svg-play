@@ -1,8 +1,8 @@
-var config = require('@quantumblack/javascript-standards/config/react/webpack/webpack.config.js');
+var config = require('@quantumblack/javascript-standards/config/react/webpack/webpack.dev.config.js');
 const path = require('path');
 const webpack = require('webpack');
 
-config.resolve.modulesDirectories.push(path.resolve(__dirname, 'src'));
+config.resolve.modules.push(path.resolve(__dirname, 'src'));
 
 config.output = {
   path: 'static',
@@ -20,10 +20,6 @@ config.externals = {
   'react/addons': true,
   'react/lib/ExecutionEnvironment': true,
   'react/lib/ReactContext': true
-};
-
-config.eslint = {
-  configFile: '.eslintrc.js'
 };
 
 // remove uglifyjs plugin
