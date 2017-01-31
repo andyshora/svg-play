@@ -1,0 +1,80 @@
+@import '../../styles/_variables';
+@import '../../styles/typography/_extends';
+
+.qb-button {
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* types */
+.qb-button--type-primary {
+  background: $primary-1;
+  color: $white;
+
+  &:hover:not([disabled]) {
+    background: $primary-2;
+  }
+
+  &:active:not([disabled]) {
+    background: $mid;
+  }
+}
+
+.qb-button--type-secondary {
+  background: $primary-2;
+  color: $white;
+
+  &:hover:not([disabled]) {
+    background: $primary-1;
+  }
+
+  &:active:not([disabled]) {
+    background: $mid;
+  }
+}
+
+.qb-button--type-positive {
+  background: $positive;
+  color: $white;
+
+  &:hover:not([disabled]) {
+    background: $primary-2;
+  }
+
+  &:active:not([disabled]) {
+    background: $mid;
+  }
+}
+
+.qb-button--type-negative {
+  background: $negative;
+  color: $white;
+
+  &:hover:not([disabled]) {
+    background: $primary-2;
+  }
+
+  &:active:not([disabled]) {
+    background: $mid;
+  }
+}
+
+/* sizes */
+.qb-button--size-small {
+  @extend %type--body-2;
+}
+
+.qb-button--size-medium {
+  @extend %type--body-1;
+}
+
+.qb-button--size-large {
+  @extend %type--display-3;
+}
+
+.qb-button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

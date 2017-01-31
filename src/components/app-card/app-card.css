@@ -1,0 +1,12 @@
+@import '../../styles/_variables';
+@import '../../styles/typography/_extends';
+
+.app-card {
+  text-align: center;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid $color-table-border;
+  position: relative;
+  vertical-align: top;
+}

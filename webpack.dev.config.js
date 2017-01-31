@@ -3,6 +3,9 @@ const path = require('path');
 const webpack = require('webpack');
 
 config.resolve.modules.push(path.resolve(__dirname, 'src'));
+config.resolve.modules.push(path.resolve(__dirname, 'src/styles'));
+
+console.log('config.resolve.modules', config.resolve.modules);
 
 config.output = {
   path: 'static',
@@ -13,7 +16,8 @@ config.output = {
 config.entry = [
   'webpack-dev-server/client?http://localhost:3000',
   'webpack/hot/only-dev-server',
-  './src/index'
+  './src/index',
+  './src/styles/index.css'
 ];
 
 config.externals = {

@@ -1,5 +1,5 @@
 {
-  "name": "@quantumblack/react-starter",
+  "name": "Launchpad",
   "version": "1.0.0",
   "description": "An app seed for creating a React app, the QB way",
   "main": "server.js",
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@quantumblack/carbon-ui-core": "0.0.3",
-    "@quantumblack/javascript-standards": "^1.2.1",
+    "@quantumblack/javascript-standards": "^1.2.2",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",

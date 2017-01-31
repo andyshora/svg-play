@@ -1,0 +1,756 @@
+{
+	"msg": "success",
+	"apps": [{
+		"mfa": {
+			"host": "mck-43-rstudio-1.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 1,
+		"name": "mck-43-rstudio-1",
+		"hostname": "mck-43-rstudio-1.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-34-tab-10.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 2,
+		"name": "mck-34-tab-10",
+		"hostname": "mck-34-tab-10.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-dataiku.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 3,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_-ZTwcrwfT86ZPP_oUrAd4g1479305789",
+		"hostname": "mck-dataiku.mck-qb.com",
+		"name": "Dataiku"
+	}, {
+		"mfa": {
+			"host": "kevin-ssh.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 4,
+		"name": "kevin-ssh",
+		"hostname": "kevin-ssh.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-14-rstudio.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": false,
+		"id": 5,
+		"name": "mck-14-rstudio",
+		"hostname": "mck-14-rstudio.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-31-rstudio.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 6,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_Xe2RSG6NRFi0an8dZsNMyQ1477074069",
+		"hostname": "mck-31-rstudio.mck-qb.com",
+		"name": "mck-31-rstudio"
+	}, {
+		"mfa": {
+			"host": "debug-prodserv-1.go.sohacloud.net",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 7,
+		"name": "debug-prodserv-1",
+		"hostname": "debug-prodserv-1.go.sohacloud.net"
+	}, {
+		"mfa": {
+			"host": "jiratest.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 8,
+		"name": "JIRA-Test",
+		"hostname": "jiratest.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-34-tab10-enc.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 9,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_QlfNAaUXT9C0BMHu1nB5Pg1478733294",
+		"hostname": "mck-34-tab10-enc.mck-qb.com",
+		"name": "Roche-Site-Selector"
+	}, {
+		"mfa": {
+			"host": "mck-52-rstudio.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 10,
+		"name": "mck-52-rstudio",
+		"hostname": "mck-52-rstudio.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-38-rdp.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 11,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_OhSEayNJQ_OdCypx1v3n4Q1477949152",
+		"hostname": "mck-38-rdp.mck-qb.com",
+		"name": "mck-38-tableau-alteryx"
+	}, {
+		"mfa": {
+			"host": "pv.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 12,
+		"name": "ProtectV",
+		"hostname": "pv.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-43-rdp.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 13,
+		"name": "mck-43-windows-tableau-alteryx-rdp",
+		"hostname": "mck-43-rdp.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-30-phpmyadmin.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 14,
+		"name": "mck-30-phpmyadmin",
+		"hostname": "mck-30-phpmyadmin.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "jiraprod.mck-qb.com",
+			"reason": "app off",
+			"force": false,
+			"status": "none",
+			"enable": false
+		},
+		"sso": true,
+		"id": 15,
+		"name": "JIRA",
+		"hostname": "jiraprod.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "drop.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 16,
+		"name": "Drop",
+		"hostname": "drop.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-46-tableau-alteryx.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 17,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_iBWz_fbVQf2Hurv17vH-8A1479924041",
+		"hostname": "mck-46-tableau-alteryx.mck-qb.com",
+		"name": "mck-46-tableau-alteryx"
+	}, {
+		"mfa": {
+			"host": "mck-34-tab.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 18,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_Petj30p0Te-QUEjc0vFKiQ1477066347",
+		"hostname": "mck-34-tab.mck-qb.com",
+		"name": "mck-34-tableau"
+	}, {
+		"mfa": {
+			"host": "mck-59-excel.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 19,
+		"name": "mck-59-excel-rdp",
+		"hostname": "mck-59-excel.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-47-tableau-alteryx.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 20,
+		"name": "mck-47-tableau-alteryx",
+		"hostname": "mck-47-tableau-alteryx.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "kevin-rstudio.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 21,
+		"name": "kevin-rstudio",
+		"hostname": "kevin-rstudio.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "demo-tableau-alteryx-rdp.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 22,
+		"name": "Demo-Tableau-Alteryx-RDP",
+		"hostname": "demo-tableau-alteryx-rdp.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "batchassessorrerport.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 23,
+		"name": "Batch Assessor Report",
+		"hostname": "batchassessorrerport.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "githubent.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 24,
+		"sso": true,
+		"logo": "https:\/\/s3-us-west-1.amazonaws.com\/bwapp-app-icons\/Git-Logo-Black.png",
+		"hostname": "githubent.mck-qb.com",
+		"name": "GitHub Enterprise"
+	}, {
+		"mfa": {
+			"host": "single-assessor-report.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 25,
+		"name": "Single Assessor Report",
+		"hostname": "single-assessor-report.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-32-tableau.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 26,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_eVo_UtVXQy6KDcQi1iPZEg1477075767",
+		"hostname": "mck-32-tableau.mck-qb.com",
+		"name": "mck-32-tableau"
+	}, {
+		"mfa": {
+			"host": "mck-54-rstudio.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 27,
+		"name": "mck-54-RStudio",
+		"hostname": "mck-54-rstudio.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-18-rstudio.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 28,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_1F2ECQL8Q3-L0-V5XH2dJw1477074657",
+		"hostname": "mck-18-rstudio.mck-qb.com",
+		"name": "mck-18-rstudio"
+	}, {
+		"mfa": {
+			"host": "blue-rstudio-2.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 29,
+		"name": "blue-rstudio-2",
+		"hostname": "blue-rstudio-2.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-52-alteryx.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 30,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_OhSEayNJQ_OdCypx1v3n4Q1477949152",
+		"hostname": "mck-52-alteryx.mck-qb.com",
+		"name": "mck-52-alteryx"
+	}, {
+		"mfa": {
+			"host": "githubentadmin.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 31,
+		"name": "GitHub Enterprise Admin Portal",
+		"hostname": "githubentadmin.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "datacatalog.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 32,
+		"name": "Datacatalog",
+		"hostname": "datacatalog.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-47-tab-server.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 33,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_cgM8SO6_Q_Wy6zzBPbMp7Q1481905614",
+		"hostname": "mck-47-tab-server.mck-qb.com",
+		"name": "mck-47-tab-server"
+	}, {
+		"mfa": {
+			"host": "mck-44-rstudio.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 34,
+		"name": "mck-44-rstudio",
+		"hostname": "mck-44-rstudio.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-43-rstudio-2.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 35,
+		"name": "mck-43-rstudio-2",
+		"hostname": "mck-43-rstudio-2.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-49-c.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 36,
+		"name": "mck-47-alteryx-c",
+		"hostname": "mck-49-c.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "myyet.go.sohacloud.net",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 37,
+		"name": "myyet-application",
+		"hostname": "myyet.go.sohacloud.net"
+	}, {
+		"mfa": {
+			"host": "tableau-test.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 38,
+		"name": "Tableau-test",
+		"hostname": "tableau-test.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-57-tab-alt-b.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 39,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_Petj30p0Te-QUEjc0vFKiQ1477066347",
+		"hostname": "mck-57-tab-alt-b.mck-qb.com",
+		"name": "mck-57-tab-alt-b"
+	}, {
+		"mfa": {
+			"host": "mck-33-app.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 40,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_wIII6EkeRqG2TyFDTyHx_Q1477074535",
+		"hostname": "mck-33-app.mck-qb.com",
+		"name": "mck-33-app"
+	}, {
+		"mfa": {
+			"host": "mck-54-zeppelin.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 41,
+		"name": "mck-54-zeppelin",
+		"hostname": "mck-54-zeppelin.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "sshdropzone.go.sohacloud.net",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 42,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_AppwjfmxQlahxJYJYgkzAA1468540875",
+		"hostname": "sshdropzone.go.sohacloud.net",
+		"name": "Dropzone SSH"
+	}, {
+		"mfa": {
+			"host": "mck-34-ticketer.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 43,
+		"name": "mck-34-ticketer",
+		"hostname": "mck-34-ticketer.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-57-tab-alt-a.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 44,
+		"name": "mck-57-tab-alt-a",
+		"hostname": "mck-57-tab-alt-a.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "myyet-user-config.go.sohacloud.net",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 45,
+		"name": "MyYet-Admin-Root",
+		"hostname": "myyet-user-config.go.sohacloud.net"
+	}, {
+		"mfa": {
+			"host": "win2016test.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 46,
+		"name": "WinServ2016Test",
+		"hostname": "win2016test.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-32-tableau-app.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 47,
+		"name": "mck-32-tableau-apps",
+		"hostname": "mck-32-tableau-app.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-demo-dataiku.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 48,
+		"name": "dataiku-demo",
+		"hostname": "mck-demo-dataiku.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "dropzone.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 49,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_6K8TPzCnTWaek9tTH2G-hg1468509988",
+		"hostname": "dropzone.mck-qb.com",
+		"name": "Dropzone"
+	}, {
+		"mfa": {
+			"host": "mck-52-zeppelin.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 50,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_cOplPFbpTv-22yhuEv3IrQ1483729143",
+		"hostname": "mck-52-zeppelin.mck-qb.com",
+		"name": "mck-52-zeppelin"
+	}, {
+		"mfa": {
+			"host": "mck-53-alteryx-tableau.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"id": 51,
+		"sso": true,
+		"logo": "https:\/\/s3.amazonaws.com\/bbrw-customer-logos\/app_icon_Petj30p0Te-QUEjc0vFKiQ1477066347",
+		"hostname": "mck-53-alteryx-tableau.mck-qb.com",
+		"name": "mck-53-alteryx-tableau"
+	}, {
+		"mfa": {
+			"host": "segmentation.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 52,
+		"name": "mck-60-rstudio",
+		"hostname": "segmentation.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-49-ssh.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 53,
+		"name": "mck-49-ssh",
+		"hostname": "mck-49-ssh.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-54-emr.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 54,
+		"name": "mck-54-emr-ssh",
+		"hostname": "mck-54-emr.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "bso-demo.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 55,
+		"name": "mck-3-rpro",
+		"hostname": "bso-demo.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "blue-rstudio.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 56,
+		"name": "blue-rstudio",
+		"hostname": "blue-rstudio.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "liveaccessorreport.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 57,
+		"name": "Live Assessor Report",
+		"hostname": "liveaccessorreport.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "mck-33-phppgadmin.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 58,
+		"name": "mck-33-phppgadmin",
+		"hostname": "mck-33-phppgadmin.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "keysecure.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 59,
+		"name": "KeySecure",
+		"hostname": "keysecure.mck-qb.com"
+	}, {
+		"mfa": {
+			"host": "kevin-dataiku.mck-qb.com",
+			"reason": "global on",
+			"force": false,
+			"status": "verify",
+			"enable": true
+		},
+		"sso": true,
+		"id": 60,
+		"name": "kevin-dataiku",
+		"hostname": "kevin-dataiku.mck-qb.com"
+	}],
+	"mfa": {
+		"status": "verify",
+		"app": {
+			"host": "mckinsey.login.go.sohacloud.net",
+			"reason": "mfa disabled on some apps",
+			"force": false,
+			"status": "none",
+			"enable": false
+		}
+	},
+	"session": true,
+	"user": "andy.shora@quantumblack.com",
+	"code": "idp-ok",
+	"status": 200,
+	"dir": "cloud"
+}
