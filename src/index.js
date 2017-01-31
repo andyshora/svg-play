@@ -1,5 +1,12 @@
-console.log('Index.js working...');
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-module.exports = {
-  test: 123
-};
+import './styles/index.css';
+
+class App extends React.Component {
+  render() {
+    return <div>Hello World</div>;
+  }
+}
+
+ReactDOM.render(<h1>Hello World</h1>, document.getElementById('root'));
