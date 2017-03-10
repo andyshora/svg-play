@@ -1,6 +1,6 @@
 {
   "name": "@quantumblack/react-starter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An app seed for creating a React app, the QB way",
   "main": "server.js",
   "ava": {
