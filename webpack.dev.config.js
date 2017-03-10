@@ -41,9 +41,30 @@ module.exports = {
         loaders: ['babel-loader']
       },
       {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
-      },
+          test: /\.css$/,
+          loaders: [
+            'style-loader',
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: function () {
+                  return [
+                    require('stylelint'),
+                    require('postcss-map')({
+                      basePath: 'src/styles/themes',
+                      maps: ['palette.yml']
+                    }),
+                    require('postcss-foreach'),
+                    require('precss'),
+                    require('postcss-cssnext')
+                  ];
+                }
+              }
+            }
+          ],
+          include: dirs,
+        },
       {
         test: /\.svg$/,
         loaders: ['babel-loader', 'svg-react-loader']

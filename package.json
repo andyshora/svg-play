@@ -30,13 +30,13 @@
     "webpack-dev-server": "webpack-dev-server --config webpack.dev.config.js --history-api-fallback --hot --inline --colors --port 3000"
   },
   "dependencies": {
-    "@quantumblack/carbon-ui-core": "1.0.0",
-    "@quantumblack/javascript-standards": "^1.2.2",
+    "@quantumblack/carbon-ui-core": "^1.1.0",
+    "@quantumblack/javascript-standards": "^1.6.1",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-plugin-webpack-loaders": "^0.8.0",
-    "babel-preset-latest": "^6.16.0",
+    "babel-preset-env": "^1.2.1",
     "babel-preset-react": "^6.11.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.1",
@@ -45,8 +45,13 @@
     "express": "^4.14.0",
     "glob": "^7.1.1",
     "lodash": "^4.17.4",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-foreach": "0.0.3",
+    "postcss-map": "^0.8.0",
+    "precss": "^1.4.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "stylelint": "^7.9.0",
     "webpack": "^2.2.1"
   },
   "engines": {
