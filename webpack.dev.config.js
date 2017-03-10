@@ -51,10 +51,10 @@ module.exports = {
                 plugins: function () {
                   return [
                     require('stylelint'),
-                    require('postcss-map')({
-                      basePath: 'src/styles/themes',
-                      maps: ['palette.yml']
-                    }),
+                    // require('postcss-map')({
+                    //   basePath: 'src/styles/themes',
+                    //   maps: ['palette.yml']
+                    // }),
                     require('postcss-foreach'),
                     require('precss'),
                     require('postcss-cssnext')
@@ -62,8 +62,7 @@ module.exports = {
                 }
               }
             }
-          ],
-          include: dirs,
+          ]
         },
       {
         test: /\.svg$/,
