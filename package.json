@@ -23,9 +23,9 @@
     "eslint": "eslint src/*.js src/**/*.js src/**/*.jsx",
     "postinstall": "npm run build",
     "prepublish": "npm run test",
-    "start": "npm run build && npm run server",
+    "start:production": "npm run build && npm run server",
     "test": "npm run eslint && npm run ava",
-    "start:dev": "npm run build:dev && NODE_ENV=development && npm run webpack-dev-server",
+    "start": "npm run build:dev && NODE_ENV=development && npm run webpack-dev-server",
     "server": "PORT=3000 node server.js",
     "webpack-dev-server": "webpack-dev-server --config webpack.dev.config.js --history-api-fallback --hot --inline --colors --port 3000"
   },
@@ -52,6 +52,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "stylelint": "^7.9.0",
+    "stylelint-order": "^0.3.0",
     "webpack": "^2.2.1"
   },
   "engines": {

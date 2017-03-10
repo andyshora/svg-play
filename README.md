@@ -5,10 +5,10 @@ Clone this repo to get up and running with a React application.
 ## Useful Commands
 
 - `npm i` to install dependencies
-- `npm run start:dev` to start the development server
+- `npm run start` to start the development server
 - `npm run test` to run unit tests
 - `npm run build` to compile to a production-ready bundle
-- `npm start` to build, and serve production-ready bundle. This should be called once deployed to production.
+- `npm start:production` to build, and serve production-ready bundle. This should be called once deployed to production.
 
 ## Coding Styleguide
 
