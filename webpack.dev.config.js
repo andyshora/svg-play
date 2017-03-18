@@ -1,5 +1,3 @@
-'use strict';
-
 const webpack = require('webpack');
 const path = require('path');
 
@@ -24,6 +22,9 @@ module.exports = {
     'react/lib/ReactContext': true
   },
   resolve: {
+    alias: {
+      components: path.resolve(__dirname, 'src/components')
+    },
     modules: [
       __dirname,
       'node_modules',
@@ -41,29 +42,22 @@ module.exports = {
         loaders: ['babel-loader']
       },
       {
-          test: /\.css$/,
-          loaders: [
-            'style-loader',
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: function () {
-                  return [
-                    require('stylelint'),
-                    // require('postcss-map')({
-                    //   basePath: 'src/styles/themes',
-                    //   maps: ['palette.yml']
-                    // }),
-                    require('postcss-foreach'),
-                    require('precss'),
-                    require('postcss-cssnext')
-                  ];
-                }
-              }
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [
+                require('stylelint'),
+                require('precss'),
+                require('postcss-cssnext')
+              ]
             }
-          ]
-        },
+          }
+        ]
+      },
       {
         test: /\.svg$/,
         loaders: ['babel-loader', 'svg-react-loader']

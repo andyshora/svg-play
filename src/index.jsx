@@ -1,11 +1,14 @@
 import './styles/index.css';
 
-const React = require('react');
-const ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// Components
+import Hills from 'components/hills';
 
 /**
  * Our main application
  */
-const App = () => <div>Hello World</div>;
+const App = () => <Hills />;
 
 ReactDOM.render(<App />, document.getElementById('root'));
