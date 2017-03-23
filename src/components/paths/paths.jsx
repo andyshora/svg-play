@@ -10,9 +10,9 @@ import perlin from 'perlin-noise';
 
 import './paths.css';
 
-const timeMultiplier = 2; // how many lengths of the screen width make up the x axis
+const timeMultiplier = 1; // how many lengths of the screen width make up the x axis
 const hillsLength = 1000;
-const duration = 20;
+const duration = 10;
 const noise = perlin.generatePerlinNoise(hillsLength, 1, { octaveCount: 7, persistence: 0.5 });
 let percent = { x: 0 };
 
@@ -31,18 +31,18 @@ const Paths = React.createClass({
     const { width, height } = this.state;
     this._motionPath = MorphSVGPlugin.pathDataToBezier(this._path, { align: 'relative' });
 
-    this._circleTween = TweenMax.to(
-      this._circle,
-      1,
-      {
-       bezier: {
-         values: this._motionPath,
-         type: 'cubic'
-       },
-       ease: Linear.easeNone,
-       paused: true
-      }
-    );
+    // this._circleTween = TweenMax.to(
+    //   this._circle,
+    //   1,
+    //   {
+    //    bezier: {
+    //      values: this._motionPath,
+    //      type: 'cubic'
+    //    },
+    //    ease: Linear.easeNone,
+    //    paused: true
+    //   }
+    // );
 
     this._svgTween = TweenMax.to(
       this._svg,
@@ -59,21 +59,22 @@ const Paths = React.createClass({
 
   },
   _onUpdate() {
-    this._circleTween.progress(percent.x / 100).pause();
+    // this._circleTween.progress(percent.x / 100).pause();
     this._svgTween.progress(percent.x / 100).pause();
     TweenMax.set(this._path, { drawSVG: `${percent.x}%` });
   },
   _handleTweenUpdated(e) {
     console.log(e);
   },
-  _getHills(widthAvailable, hillHeight) {
+  _getHills({ startX, startY, maxWidth, maxHeight }) {
 
-    const xPerStep = widthAvailable * timeMultiplier / noise.length;
+    const xPerStep = maxWidth * (timeMultiplier + 1) / noise.length;
 
     const arr = _.map(noise, (n, i) => {
+      const val = n - 0.5;
       return i
-        ? `L ${(xPerStep * i)} -${n * hillHeight}`
-        : `M 0 -${n * hillHeight}`;
+        ? `L ${startX + (xPerStep * i)} ${startY - (val * maxHeight)}`
+        : `M ${startX} ${startY - (val * maxHeight)}`;
     });
 
     return arr.join(' ');
@@ -85,8 +86,8 @@ const Paths = React.createClass({
   render() {
     const { width, height } = this.state;
     const cx = width / 2;
-    const cy = height * 0.25;
-    const hills = this._getHills(width, cy);
+    const cy = height * 0.5;
+    const hills = this._getHills({ startX: 0, startY: cy, maxWidth: width, maxHeight: height / 2 });
     const pathData = `${hills}`;
     return (
       <div className='paths'>
@@ -96,7 +97,7 @@ const Paths = React.createClass({
           width={width}
           height={height}>
           <g>
-            <circle ref={circle => { this._circle = circle; }} r={5} cx={10} cy={cy} />
+            <circle fill='none' ref={circle => { this._circle = circle; }} r={5} cx={10} cy={cy} />
             <path
               id='path'
               stroke='url(#linear)'
