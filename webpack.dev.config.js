@@ -17,13 +17,17 @@ module.exports = {
     publicPath: '/dist/'
   },
   externals: {
+    'MorphSVGPlugin': true,
+    'TweenLite': true,
+    'TweenMax': true,
     'react/addons': true,
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true
   },
   resolve: {
     alias: {
-      components: path.resolve(__dirname, 'src/components')
+      components: path.resolve(__dirname, 'src/components'),
+      gsap: path.resolve(__dirname, 'src/gsap')
     },
     modules: [
       __dirname,

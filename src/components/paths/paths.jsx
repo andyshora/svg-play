@@ -1,11 +1,20 @@
 // Imports
 
 import React from 'react';
-// import perlin from 'perlin-noise';
+import MorphSVGPlugin from 'gsap/plugins/MorphSVGPlugin';
+import _ from 'lodash';
+
+import perlin from 'perlin-noise';
 // import _ from 'lodash';
 // import chroma from 'chroma-js';
 
 import './paths.css';
+
+const timeMultiplier = 2; // how many lengths of the screen width make up the x axis
+const hillsLength = 1000;
+const duration = 20;
+const noise = perlin.generatePerlinNoise(hillsLength, 1, { octaveCount: 7, persistence: 0.5 });
+let percent = { x: 0 };
 
 /**
  * paths
@@ -14,13 +23,60 @@ const Paths = React.createClass({
   displayName: 'Paths',
   getInitialState() {
     return {
-      width: window.innerWidth,
+      width: 1000,
       height: window.innerHeight
     };
   },
   componentDidMount() {
-     this._motionPath = MorphSVGPlugin.pathDataToBezier('#path');
-     console.log('this._motionPath', this._motionPath);
+    const { width, height } = this.state;
+    this._motionPath = MorphSVGPlugin.pathDataToBezier(this._path, { align: 'relative' });
+
+    this._circleTween = TweenMax.to(
+      this._circle,
+      1,
+      {
+       bezier: {
+         values: this._motionPath,
+         type: 'cubic'
+       },
+       ease: Linear.easeNone,
+       paused: true
+      }
+    );
+
+    this._svgTween = TweenMax.to(
+      this._svg,
+      1,
+      {
+       attr: { viewBox: `${width} 0 ${width} ${height}` },
+       ease: Linear.easeNone,
+       paused: true
+      }
+    );
+
+    // tween a percentage marker - this sync both tweens in the _onUpdate function
+    TweenMax.to(percent, duration, { x: 100, delay: 0, repeat: -1, ease: Linear.easeNone, onUpdate: this._onUpdate });
+
+  },
+  _onUpdate() {
+    this._circleTween.progress(percent.x / 100).pause();
+    this._svgTween.progress(percent.x / 100).pause();
+    TweenMax.set(this._path, { drawSVG: `${percent.x}%` });
+  },
+  _handleTweenUpdated(e) {
+    console.log(e);
+  },
+  _getHills(widthAvailable, hillHeight) {
+
+    const xPerStep = widthAvailable * timeMultiplier / noise.length;
+
+    const arr = _.map(noise, (n, i) => {
+      return i
+        ? `L ${(xPerStep * i)} -${n * hillHeight}`
+        : `M 0 -${n * hillHeight}`;
+    });
+
+    return arr.join(' ');
   },
   /**
    * render - render the component
@@ -29,7 +85,9 @@ const Paths = React.createClass({
   render() {
     const { width, height } = this.state;
     const cx = width / 2;
-    const cy = height / 2;
+    const cy = height * 0.25;
+    const hills = this._getHills(width, cy);
+    const pathData = `${hills}`;
     return (
       <div className='paths'>
         <svg
@@ -37,8 +95,21 @@ const Paths = React.createClass({
           viewBox={`0 0 ${width} ${height}`}
           width={width}
           height={height}>
-          <path id='path' ref={path => { this._path = path; }} d={`M 10 ${cy} h ${width - 10}`} />
-          <circle r={'10'} cx={10} cy={cy} />
+          <g>
+            <circle ref={circle => { this._circle = circle; }} r={5} cx={10} cy={cy} />
+            <path
+              id='path'
+              stroke='url(#linear)'
+              ref={path => { this._path = path; }}
+              d={pathData} />
+
+          </g>
+          <defs>
+            <linearGradient id='linear' x1='0%' y1='0%' x2='0%' y2='100%'>
+              <stop offset='0%'   stopColor='lime'/>
+              <stop offset='100%' stopColor='red'/>
+            </linearGradient>
+          </defs>
         </svg>
       </div>
     );
