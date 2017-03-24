@@ -11,10 +11,11 @@ import perlin from 'perlin-noise';
 import './paths.css';
 
 const timeMultiplier = 1; // how many lengths of the screen width make up the x axis
-const hillsLength = 1000;
+const hillsLength = 10000;
 const duration = 10;
 const noise = perlin.generatePerlinNoise(hillsLength, 1, { octaveCount: 7, persistence: 0.5 });
 let percent = { x: 0 };
+const transitionBox = true;
 
 /**
  * paths
@@ -31,36 +32,28 @@ const Paths = React.createClass({
     const { width, height } = this.state;
     this._motionPath = MorphSVGPlugin.pathDataToBezier(this._path, { align: 'relative' });
 
-    // this._circleTween = TweenMax.to(
-    //   this._circle,
-    //   1,
-    //   {
-    //    bezier: {
-    //      values: this._motionPath,
-    //      type: 'cubic'
-    //    },
-    //    ease: Linear.easeNone,
-    //    paused: true
-    //   }
-    // );
-
-    this._svgTween = TweenMax.to(
-      this._svg,
-      1,
-      {
-       attr: { viewBox: `${width} 0 ${width} ${height}` },
-       ease: Linear.easeNone,
-       paused: true
-      }
-    );
+    if (transitionBox) {
+      // transition viewbox
+      this._svgTween = TweenMax.to(
+        this._svg,
+        1,
+        {
+         attr: { viewBox: `${width} 0 ${width} ${height}` },
+         ease: Linear.easeNone,
+         paused: true
+        }
+      );
+    }
 
     // tween a percentage marker - this sync both tweens in the _onUpdate function
-    TweenMax.to(percent, duration, { x: 100, delay: 0, repeat: -1, ease: Linear.easeNone, onUpdate: this._onUpdate });
+    this._baseTween = TweenMax.to(percent, duration, { x: 100, delay: 0, repeat: -1, ease: Linear.easeNone, onUpdate: this._onUpdate });
 
   },
   _onUpdate() {
     // this._circleTween.progress(percent.x / 100).pause();
-    this._svgTween.progress(percent.x / 100).pause();
+    if (transitionBox) {
+      this._svgTween.progress(percent.x / 100).pause();
+    }
     TweenMax.set(this._path, { drawSVG: `${percent.x}%` });
   },
   _handleTweenUpdated(e) {
@@ -68,7 +61,7 @@ const Paths = React.createClass({
   },
   _getHills({ startX, startY, maxWidth, maxHeight }) {
 
-    const xPerStep = maxWidth * (timeMultiplier + 1) / noise.length;
+    const xPerStep = maxWidth * (timeMultiplier + +transitionBox) / noise.length;
 
     const arr = _.map(noise, (n, i) => {
       const val = n - 0.5;
@@ -78,6 +71,16 @@ const Paths = React.createClass({
     });
 
     return arr.join(' ');
+  },
+  _handleButtonClicked() {
+    console.log('this._baseTween', this._baseTween);
+    const paused = this._baseTween.paused();
+
+    if (paused) {
+      this._baseTween.resume();
+    } else {
+      this._baseTween.pause();
+    }
   },
   /**
    * render - render the component
@@ -103,7 +106,6 @@ const Paths = React.createClass({
               stroke='url(#linear)'
               ref={path => { this._path = path; }}
               d={pathData} />
-
           </g>
           <defs>
             <linearGradient id='linear' x1='0%' y1='0%' x2='0%' y2='100%'>
@@ -112,6 +114,7 @@ const Paths = React.createClass({
             </linearGradient>
           </defs>
         </svg>
+        <button onClick={this._handleButtonClicked}>Pause</button>
       </div>
     );
   }
