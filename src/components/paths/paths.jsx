@@ -12,7 +12,7 @@ import './paths.css';
 
 const timeMultiplier = 1; // how many lengths of the screen width make up the x axis
 const hillsLength = 10000;
-const duration = 10;
+const duration = 30;
 const noise = perlin.generatePerlinNoise(hillsLength, 1, { octaveCount: 7, persistence: 0.5 });
 let percent = { x: 0 };
 const transitionBox = true;
@@ -46,6 +46,16 @@ const Paths = React.createClass({
       );
     }
 
+    this._lineYTween = TweenMax.to(
+      this._lineY,
+      1,
+      {
+       attr: { x: width + (width * timeMultiplier) },
+       ease: Linear.easeNone,
+       paused: true
+      }
+    );
+
     // tween a percentage marker - this sync both tweens in the _onUpdate function
     this._baseTween = TweenMax.to(percent, duration, { x: 100, delay: 0, repeat: -1, ease: Linear.easeNone, onUpdate: this._onUpdate });
 
@@ -58,6 +68,7 @@ const Paths = React.createClass({
     if (transitionBox) {
       this._svgTween.progress(val / 100).pause();
     }
+    this._lineYTween.progress(val / 100).pause();
     TweenMax.set(this._path, { drawSVG: `${val}%` });
 
     this.setState({
@@ -127,6 +138,9 @@ const Paths = React.createClass({
               stroke='url(#linear)'
               ref={path => { this._path = path; }}
               d={pathData} />
+          </g>
+          <g>
+            <rect ref={lineY => { this._lineY = lineY; }} width={1} height={height * 0.2} x={0} y={height * 0.8} fill={'rgba(255,255,255,0.1)'} transform={'translate(-1, 0)'} />
           </g>
           <defs>
             <linearGradient id='linear' x1='0%' y1='0%' x2='0%' y2='100%'>
