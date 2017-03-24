@@ -24,6 +24,7 @@ const Paths = React.createClass({
   displayName: 'Paths',
   getInitialState() {
     return {
+      counter: 0,
       width: 1000,
       height: window.innerHeight
     };
@@ -51,13 +52,23 @@ const Paths = React.createClass({
   },
   _onUpdate() {
     // this._circleTween.progress(percent.x / 100).pause();
-    if (transitionBox) {
-      this._svgTween.progress(percent.x / 100).pause();
-    }
-    TweenMax.set(this._path, { drawSVG: `${percent.x}%` });
+    this._updateTweenPercentage(percent.x, true);
   },
-  _handleTweenUpdated(e) {
-    console.log(e);
+  _updateTweenPercentage(val, updateSlider = false) {
+    if (transitionBox) {
+      this._svgTween.progress(val / 100).pause();
+    }
+    TweenMax.set(this._path, { drawSVG: `${val}%` });
+
+    this.setState({
+      counter: parseFloat(val, 10)
+    });
+
+    if (updateSlider) {
+      this._slider.value = val;
+    } else {
+      this._baseTween.progress(val / 100);
+    }
   },
   _getHills({ startX, startY, maxWidth, maxHeight }) {
 
@@ -81,6 +92,16 @@ const Paths = React.createClass({
     } else {
       this._baseTween.pause();
     }
+  },
+  _handleSliderChanged(e) {
+    console.log('_handleSliderChanged', e.target.value);
+    percent.x = e.target.value;
+    this._updateTweenPercentage(e.target.value);
+    // this._baseTween.resume();
+  },
+  _handleSliderInput(e) {
+    console.log('_handleSliderInput', e);
+    this._baseTween.pause();
   },
   /**
    * render - render the component
@@ -115,6 +136,8 @@ const Paths = React.createClass({
           </defs>
         </svg>
         <button onClick={this._handleButtonClicked}>Pause</button>
+        <p>Counter: {this.state.counter.toFixed(3)}</p>
+        <input className='paths__range' type='range' min={0} max={100} ref={slider => { this._slider = slider; }} step={0.01} onInput={this._handleSliderInput} onChange={this._handleSliderChanged} />
       </div>
     );
   }
