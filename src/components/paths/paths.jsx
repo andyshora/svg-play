@@ -81,7 +81,7 @@ const Paths = React.createClass({
       this._baseTween.progress(val / 100);
     }
   },
-  _getHills({ startX, startY, maxWidth, maxHeight }) {
+  _createNoiseLine({ startX, startY, maxWidth, maxHeight }) {
 
     const xPerStep = maxWidth * (timeMultiplier + +transitionBox) / noise.length;
 
@@ -105,10 +105,8 @@ const Paths = React.createClass({
     }
   },
   _handleSliderChanged(e) {
-    console.log('_handleSliderChanged', e.target.value);
     percent.x = e.target.value;
     this._updateTweenPercentage(e.target.value);
-    // this._baseTween.resume();
   },
   _handleSliderInput(e) {
     console.log('_handleSliderInput', e);
@@ -122,7 +120,7 @@ const Paths = React.createClass({
     const { width, height } = this.state;
     const cx = width / 2;
     const cy = height * 0.5;
-    const hills = this._getHills({ startX: 0, startY: cy, maxWidth: width, maxHeight: height / 2 });
+    const hills = this._createNoiseLine({ startX: 0, startY: cy, maxWidth: width, maxHeight: height / 2 });
     const pathData = `${hills}`;
     return (
       <div className='paths'>

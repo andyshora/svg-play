@@ -12,9 +12,9 @@ module.exports = {
     './src/index'
   ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'static'),
     filename: 'bundle.js',
-    publicPath: path.resolve(__dirname, 'dist')
+    publicPath: '/static'
   },
   externals: {
     'MorphSVGPlugin': true,
